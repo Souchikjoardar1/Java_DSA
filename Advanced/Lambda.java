@@ -48,4 +48,5 @@ public class Lambda {
         System.out.println(c != Float.NaN);// static method checks whether it is a number or not
         Character d = 'A';
     }
+    
 }
