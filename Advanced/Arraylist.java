@@ -1,5 +1,3 @@
-package Advanced;
-
 import java.util.*;
 
 public class Arraylist {
