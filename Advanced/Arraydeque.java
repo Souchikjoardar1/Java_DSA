@@ -1,6 +1,4 @@
-package Advanced;
-
-import java.util.ArrayDeque;
+import java.util.*;
 
 public class Arraydeque {
     public static void main(String[] args) {
@@ -15,6 +13,12 @@ public class Arraydeque {
         ad1.offerFirst(250);
         ad1.offerLast(true);
         System.out.println("the collection 2 " + ad1);
+        ArrayList<Integer> al = new ArrayList<>(List.of(40, 30, 66, 22, 20));
+        Iterator i = al.iterator();
+        System.out.println("the arraylist is : ");
+        while (i.hasNext()) {
+            System.out.println(i.next());
+        }
         // index based insertion or deletion is not allowed both heterogenous and
         // homogenous data is stored duplicates are allowed
         // difference between offer() and add() is that offer might be rejected and so
