@@ -13,7 +13,7 @@ public class Arraydeque {
         ad1.offerFirst(250);
         ad1.offerLast(true);
         System.out.println("the collection 2 " + ad1);
-        ArrayList<Integer> al = new ArrayList<>(List.of(40, 30, 66, 22, 20));
+        ArrayList<Integer> al = new ArrayList<Integer>(List.of(40, 30, 66, 22, 20));
         Iterator i = al.iterator();
         System.out.println("the arraylist is : ");
         while (i.hasNext()) {
