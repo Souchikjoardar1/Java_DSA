@@ -1,21 +1,31 @@
 import java.util.*;
 
 class Student {
-    private String name;
-    private int roll;
+    String name;
+    int roll;
+
+    Student(String n, int r) {
+        this.name = n;
+        this.roll = r;
+    }
 }
 
 class Employee {
-    private String name;
-    private int roll;
+    String name;
+    int roll;
+
+    Employee(Student s) {
+        this.name = s.name;
+        this.roll = s.roll;
+    }
 }
 
 public class Generics {
     public static void main(String[] args) {
-        Student s = new Student();
-        Student s1 = new Student();
-        Employee e = new Employee();
-        Employee e1 = new Employee();
+        Student s = new Student("souchik", 102);
+        Student s1 = new Student("Joardar", 2023);
+        Employee e = new Employee(s);
+        Employee e1 = new Employee(s1);
         ArrayList<Student> al = new ArrayList<Student>();
         al.add(s);
         al.add(s1);
