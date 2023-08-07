@@ -1,7 +1,7 @@
 import java.io.*;
 
 class Second_largest {
-    static private int secondSmallest(int[] arr, int n) {
+    static int secondSmallest(int[] arr, int n) {
         if (n < 2) {
             return -1;
         }
@@ -19,7 +19,7 @@ class Second_largest {
         return second_small;
     }
 
-    static private int secondLargest(int[] arr, int n) {
+    static int secondLargest(int[] arr, int n) {
         if (n < 2)
             return -1;
         int large = Integer.MIN_VALUE;
