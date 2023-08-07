@@ -1,1 +1,1 @@
-arr
+s which can achieve the target sum are " + triplet_sum(arr, x))
