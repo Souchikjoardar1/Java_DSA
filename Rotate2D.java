@@ -50,7 +50,7 @@ class Rotate2D {
         System.out.println("enter the array elements");
         for (int i = 0; i < r; i++) {// row
             for (int j = 0; j < c; j++) {// column
-                System.out.println("Row[" + i + "]Col[" + j + "]");
+                // System.out.println("Row[" + i + "]Col[" + j + "]");
                 arr[i][j] = in.nextInt();
             }
         }
