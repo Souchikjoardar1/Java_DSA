@@ -52,12 +52,38 @@ public class LinkedList {
         length++;
     }
 
+    public Node removeLast() {
+        Node temp = head;
+        Node pre = temp;
+        if (length == 0) {
+            return null;
+        } else {
+            while (temp.next != null) {
+                pre = temp;
+                temp = temp.next;
+            }
+            tail = pre;
+            tail.next = null;
+            length--;
+        }
+        return temp;
+    }
+
     public static void main(String[] args) {
         LinkedList myLinkedList = new LinkedList(1);
         myLinkedList.append(2);
         myLinkedList.getHead();
         myLinkedList.getTail();
         myLinkedList.getLength();
+        myLinkedList.printList();
+        myLinkedList.append(3);
+        myLinkedList.append(4);
+        myLinkedList.append(5);
+        System.out.println("the original linked list: ");
+        myLinkedList.printList();
+        System.out.println("the element removed is: ");
+        System.out.println(myLinkedList.removeLast().value);
+        System.out.println("the linked list after element removal : ");
         myLinkedList.printList();
     }
 }
