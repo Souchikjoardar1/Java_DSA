@@ -108,6 +108,17 @@ public class LinkedList {
         return temp;
     }
 
+    public boolean set(int index, int value) {
+        Node temp = get(index);
+        if (temp != null) {
+            for (int i = 0; i < index; i++) {
+                temp.value = value;
+                return true;
+            }
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         LinkedList myLinkedList = new LinkedList(1);
         Scanner in = new Scanner(System.in);
@@ -139,5 +150,14 @@ public class LinkedList {
             System.out.println(myLinkedList.get(index).value);
         else
             System.out.println("NUll");
+        System.out.println("enter the value you want to insert at " + index);
+        int value = in.nextInt();
+        System.out.println("the status of set value: ");
+        System.out.println(myLinkedList.set(index, value));
+        if (myLinkedList.set(index, value)) {
+            System.out.println("the new linked list is: ");
+            myLinkedList.printList();
+        } else
+            System.out.println("NULL");
     }
 }
