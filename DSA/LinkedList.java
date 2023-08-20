@@ -1,3 +1,5 @@
+import java.util.*;
+
 class Node {
     int value;
     Node next;
@@ -96,8 +98,19 @@ public class LinkedList {
         return temp;
     }
 
+    public Node get(int index) {
+        Node temp = head;
+        if (index < 0 || index > length)
+            return null;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp;
+    }
+
     public static void main(String[] args) {
         LinkedList myLinkedList = new LinkedList(1);
+        Scanner in = new Scanner(System.in);
         myLinkedList.append(2);
         myLinkedList.getHead();
         myLinkedList.getTail();
@@ -119,5 +132,12 @@ public class LinkedList {
         System.out.println(myLinkedList.removefirst().value);
         System.out.println("the list after removal of first element");
         myLinkedList.printList();
+        System.out.println("enter an index to fetch the node ");
+        int index = in.nextInt();
+        System.out.println("the node at index " + index + " is: ");
+        if (myLinkedList.get(index) != null)
+            System.out.println(myLinkedList.get(index).value);
+        else
+            System.out.println("NUll");
     }
 }
