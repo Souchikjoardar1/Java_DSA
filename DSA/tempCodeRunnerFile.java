@@ -1,1 +1,7 @@
-s which can achieve the target sum are " + triplet_sum(arr, x))
+public Node removefirst() {
+    // if (length == 0)
+    // return null;
+    // else {
+
+    // }
+    // }

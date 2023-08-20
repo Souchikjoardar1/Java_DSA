@@ -69,6 +69,33 @@ public class LinkedList {
         return temp;
     }
 
+    public void prepend(int value) {
+        Node newnode = new Node(value);
+        if (length == 0) {
+            head = newnode;
+            tail = newnode;
+        } else {
+            newnode.next = head;
+            head = newnode;
+        }
+        length++;
+    }
+
+    public Node removefirst() {
+        Node temp = head;
+        if (length == 0)// no nodes present
+            return null;
+
+        else {
+            head = head.next;// more than one node
+            temp.next = null;
+            length--;
+        }
+        if (length == 0)// any one node present
+            tail = null;// since tail still points to the node
+        return temp;
+    }
+
     public static void main(String[] args) {
         LinkedList myLinkedList = new LinkedList(1);
         myLinkedList.append(2);
@@ -84,6 +111,13 @@ public class LinkedList {
         System.out.println("the element removed is: ");
         System.out.println(myLinkedList.removeLast().value);
         System.out.println("the linked list after element removal : ");
+        myLinkedList.printList();
+        myLinkedList.prepend(6);
+        System.out.println("the prepended linked list: ");
+        myLinkedList.printList();
+        System.out.println("the removed node is: ");
+        System.out.println(myLinkedList.removefirst().value);
+        System.out.println("the list after removal of first element");
         myLinkedList.printList();
     }
 }
