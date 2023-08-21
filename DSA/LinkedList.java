@@ -108,7 +108,7 @@ public class LinkedList {
         return temp;
     }
 
-    public boolean set(int index, int value) {
+    public boolean set(int index, int value) {// to change the value of a particular node
         Node temp = get(index);
         if (temp != null) {
             for (int i = 0; i < index; i++) {
@@ -117,6 +117,25 @@ public class LinkedList {
             }
         }
         return false;
+    }
+
+    public boolean insert(int value, int index) {// to insert a new node at a random position
+        if (index < 0 || index > length)
+            return false;
+        if (index == 0) {// inserting at the first index
+            prepend(value);
+            return true;
+        }
+        if (index == length) {// inserting at the last index
+            append(value);
+            return true;
+        }
+        Node newNode = new Node(value);
+        Node temp = get(index);
+        newNode.next = temp.next;
+        temp.next = newNode;
+        length++;
+        return true;
     }
 
     public static void main(String[] args) {
@@ -150,7 +169,7 @@ public class LinkedList {
             System.out.println(myLinkedList.get(index).value);
         else
             System.out.println("NUll");
-        System.out.println("enter the value you want to insert at " + index);
+        System.out.println("enter the new value you want to set the previous value to at : " + index);
         int value = in.nextInt();
         System.out.println("the status of set value: ");
         System.out.println(myLinkedList.set(index, value));
@@ -159,5 +178,16 @@ public class LinkedList {
             myLinkedList.printList();
         } else
             System.out.println("NULL");
+        System.out.println("enter the index where you would like to insert a new node in the LL : ");
+        int index1 = in.nextInt();
+        System.out.println("enter the value you would like to insert @ " + index1);
+        int value1 = in.nextInt();
+        System.out.println("the status of insertion is.... " + myLinkedList.insert(value1, index1));
+        if (myLinkedList.insert(value1, index1)) {
+            System.out.println("linked list after insertion of a new node @ " + index1);
+            myLinkedList.printList();
+        } else
+            System.out
+                    .println("the index should exceed " + myLinkedList.length + " and should not be a negative number");
     }
 }
