@@ -111,10 +111,8 @@ public class LinkedList {
     public boolean set(int index, int value) {// to change the value of a particular node
         Node temp = get(index);
         if (temp != null) {
-            for (int i = 0; i < index; i++) {
-                temp.value = value;
-                return true;
-            }
+            temp.value = value;
+            return true;
         }
         return false;
     }
@@ -125,17 +123,34 @@ public class LinkedList {
         if (index == 0) {// inserting at the first index
             prepend(value);
             return true;
-        }
-        if (index == length) {// inserting at the last index
+        } else if (index == length) {// inserting at the last index
             append(value);
             return true;
+        } else {
+            Node newNode = new Node(value);
+            Node temp = get(index);
+            newNode.next = temp.next;
+            temp.next = newNode;
+            length++;
+            return true;
         }
-        Node newNode = new Node(value);
-        Node temp = get(index);
-        newNode.next = temp.next;
-        temp.next = newNode;
-        length++;
-        return true;
+    }
+
+    public Node remove(int index) {
+        if (index < 0 || index > length)
+            return null;
+        if (index == 0)
+            return removefirst();
+        if (index == length - 1)
+            return removeLast();
+        else {
+            Node prev = get(index - 1);// O(n)
+            Node temp = prev.next;// this is O(1), didn't use the get method since it's O(n)
+            prev.next = temp.next;
+            temp.next = null;
+            length--;
+            return temp;// return the node removed
+        }
     }
 
     public static void main(String[] args) {
@@ -165,14 +180,9 @@ public class LinkedList {
         System.out.println("enter an index to fetch the node ");
         int index = in.nextInt();
         System.out.println("the node at index " + index + " is: ");
-        if (myLinkedList.get(index) != null)
-            System.out.println(myLinkedList.get(index).value);
-        else
-            System.out.println("NUll");
+        System.out.println(myLinkedList.get(index).value);
         System.out.println("enter the new value you want to set the previous value to at : " + index);
         int value = in.nextInt();
-        System.out.println("the status of set value: ");
-        System.out.println(myLinkedList.set(index, value));
         if (myLinkedList.set(index, value)) {
             System.out.println("the new linked list is: ");
             myLinkedList.printList();
@@ -182,12 +192,19 @@ public class LinkedList {
         int index1 = in.nextInt();
         System.out.println("enter the value you would like to insert @ " + index1);
         int value1 = in.nextInt();
-        System.out.println("the status of insertion is.... " + myLinkedList.insert(value1, index1));
         if (myLinkedList.insert(value1, index1)) {
             System.out.println("linked list after insertion of a new node @ " + index1);
             myLinkedList.printList();
         } else
             System.out
                     .println("the index should exceed " + myLinkedList.length + " and should not be a negative number");
+        System.out.println("enter the index of the node to be removed ");
+        int index2 = in.nextInt();
+        if (myLinkedList.remove(index2) != null) {
+            System.out.println("the new linked list after removal :- ");
+            myLinkedList.printList();
+        } else
+            System.out.println(
+                    "the index should exceed " + myLinkedList.length + " and should not be a negative number");
     }
 }
