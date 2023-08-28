@@ -15,7 +15,8 @@ public class Lambda {
         // }
         // };
         // lambda method
-        I ld = () -> {
+        I ld = () -> {// it is a reference of interface I which will be used contain the definition of
+                      // the display()
             System.out.println("lambda method");
         };
         ld.display();
