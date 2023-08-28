@@ -1,6 +1,7 @@
 import java.util.*;
 import java.time.*;
 import java.time.temporal.*;
+import java.time.format.*;
 
 public class DateDemo {
     public static void main(String[] args) {
@@ -39,5 +40,11 @@ public class DateDemo {
         System.out.println(p.addTo(LocalDate.now()));// adding period of 2y2m12days to the localdatetime
         Instant i = Instant.now();
         System.out.println(i);// with respect to greenwich mean time
+        LocalDateTime L = LocalDateTime.now();
+        DateTimeFormatter df = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        System.out.println("the format is date/month/year " + df.format(L));// passing the local date time object to the
+                                                                            // format methodwhich contains the pattern
+                                                                            // dd/MM/yyyy
+
     }
 }
