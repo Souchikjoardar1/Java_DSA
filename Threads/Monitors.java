@@ -4,6 +4,7 @@ package Threads;
 //in case of monitors in java the objects perform the lock,unlock,wait,notify operations it's a built-in feature
 //so we'll make the display which is shared by both thread 1 and 2 as synchronized 
 //by making the display() synchronized the method will first execute the ops of one thread then after completing the ops it will notify the other thread that the first thread as executed now it's available for implementing the mutual execution
+//even if we have used sleep() in any of the threads still the execution of one thread won't be interrupted during it's sleep time first that thread will be executed completely then only the other threads will get CPU time    
 class Mydata {
     synchronized public void display(String str) {// split the characters of a string
         for (int i = 0; i < str.length(); i++) {
