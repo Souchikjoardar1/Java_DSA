@@ -9,6 +9,11 @@ class Mydata {
     synchronized public void display(String str) {// split the characters of a string
         for (int i = 0; i < str.length(); i++) {
             System.out.println(str.charAt(i));
+            try {
+                Thread.sleep(100);
+            } catch (Exception e) {
+            }
+            ;
         }
     }
 }
