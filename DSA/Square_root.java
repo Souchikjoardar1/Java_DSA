@@ -13,7 +13,7 @@ class S {
             } else if (num > value) {// not perfect square
                 result = mid;
                 low = mid + 1;
-            } else
+            } else// not a perfect square
                 high = mid - 1;
         }
         return result;
