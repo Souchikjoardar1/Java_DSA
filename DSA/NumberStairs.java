@@ -17,7 +17,9 @@ public class NumberStairs {
         System.out.println("enter the number of stairs ");
         int stairs = in.nextInt();
         int result = countNum(stairs + 1);
-        // the relationship b/w number of stairs problem and fibonacci problem
+        // the relationship b/w number of ways of climbing stairs problem and fibonacci
+        // problem
+        // the number of ways of climbing stairs = fibonacci(number of stairs+1)
         System.out.println("the total number of ways is=" + result);
     }
 }
