@@ -1,1 +1,1 @@
- myLinkedList.printList();
+try {
