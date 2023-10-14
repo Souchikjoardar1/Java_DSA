@@ -6,8 +6,8 @@ class FetchPower {
     // return number * getpower(number, power - 1);
     // }
 
-    int getpower(int number, int power) {// optimal approach
-        int mid = 0, finalresult = 0, result = 0;
+    long getpower(long number, long power) {// optimal approach
+        long mid = 0, finalresult = 0, result = 0;
         if (power == 1)
             return number;// base condition
         else {
@@ -28,6 +28,6 @@ class FetchPower {
 public class Power {
     public static void main(String[] args) {
         FetchPower f = new FetchPower();
-        System.out.println("the power of the number is=  " + f.getpower(2, 64));
+        System.out.println("the power of the number is=  " + f.getpower(2l, 32l));
     }
 }
