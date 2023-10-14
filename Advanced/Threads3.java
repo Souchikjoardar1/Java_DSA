@@ -48,3 +48,11 @@ public class Threads3 {
         System.out.println("Main thread executed");
     }
 }
+/*
+ * if we call start() then it creates a thread which will indirectly call the
+ * run()
+ * if we call run() then no seperate thread will be created and the execution
+ * will be single threaded
+ * in nature
+ * Diff run() v/s start()
+ */
