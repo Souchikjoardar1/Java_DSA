@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Calc extends Thread {
+class Calc extends Thread {// this class inherites all the properties of the thread class
     public void run() {// overrides the run() of runnable interface
         System.out.println("Calc1 executed");
         Scanner in = new Scanner(System.in);
@@ -24,6 +24,13 @@ class Calc1 extends Thread {
     }
 }
 
+/*
+ * since the Calc1/Calc extends Threads it has all the properties of threads
+ * class
+ * so instead of directly creating an object of Thread class will create the
+ * object of calc1/calc
+ * which creates thread objects for these classes
+ */
 public class Threads2 {
     public static void main(String[] args) {
         Calc c = new Calc();
