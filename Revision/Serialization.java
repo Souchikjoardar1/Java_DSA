@@ -7,11 +7,17 @@ class Cricketer implements Serializable {
     private String name;
     private int age;
     private int runs;
+    private static final long serialVersionUID = 1L;
 
     public Cricketer(String name, int age, int runs) {
         this.name = name;
         this.age = age;
         this.runs = runs;
+    }
+
+    @Override
+    public String toString() {
+        return "name: " + name + " age: " + age + " runs: " + runs;
     }
 }
 
