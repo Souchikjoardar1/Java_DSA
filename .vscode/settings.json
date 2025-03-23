@@ -1,3 +1,4 @@
 {
-    "peacock.color": ""
+    "peacock.color": "",
+    "java.debug.settings.onBuildFailureProceed": true
 }
