@@ -2,15 +2,12 @@ import java.util.*;
 
 public class Lastindex {
     static int lastIndex(int arr[], int x) {
-        int index = -1;
         for (int i = arr.length - 1; i >= 0; i--) {
-            if (arr[i] == x)
-                index = i;
+            if (arr[i] == x) {
+                return i;
+            }
         }
-        if (index < 0)
-            return -1;
-        else
-            return index;
+        return -1;
     }
 
     public static void main(String[] args) {
@@ -20,8 +17,8 @@ public class Lastindex {
         for (int i = 0; i < arr.length; i++) {
             arr[i] = in.nextInt();
         }
-        System.out.println("enter the number yoou wanna find the last occurence of ");
+        System.out.println("Enter the target value:");
         int x = in.nextInt();
-        System.out.println("the last occurence of " + x + " is at index" + lastIndex(arr, x));
+        System.out.println("The last occurrence of " + x + " is at index " + lastIndex(arr, x));
     }
 }
