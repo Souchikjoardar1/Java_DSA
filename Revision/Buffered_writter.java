@@ -50,7 +50,7 @@ public class Buffered_writter {
         File f = new File(dir, "Revision.txt");
         FileWriter fw = new FileWriter(f, true);
         BufferedWriter bw = new BufferedWriter(fw);
-        bw.write("java is so damn cool !");
+        bw.write("Buffered file output from Java.");
         bw.newLine();
         bw.write(95);
         char ch[] = { 'a', 'e', 'r' };
@@ -60,8 +60,8 @@ public class Buffered_writter {
          * What Happens Next?
          * After these lines, you can use the BufferedWriter (bw) to write data to the
          * file. For example:
-         * 
-         * bw.write("java is so damn cool !"); writes a string to the file.
+         *
+         * bw.write("Buffered file output from Java."); writes a string to the file.
          * bw.newLine(); adds a new line.
          * bw.write(95); writes the character corresponding to ASCII value 95 (_).
          * bw.write(ch); writes the characters from the array ch (aer).

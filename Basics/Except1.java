@@ -19,7 +19,7 @@ class Minbalanaceexception extends Exception {// overriding the Exception class
 class Except1 {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        System.out.println("enter the amount you wanna withdraw :");
+        System.out.println("Enter the amount to withdraw:");
         int amt = in.nextInt();
         Minbalanaceexception m = new Minbalanaceexception();
         System.out.println(m.toString(amt));// the toString() needs S.O.P method to display it's output
