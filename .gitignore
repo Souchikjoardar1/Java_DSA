@@ -1,3 +1,11 @@
-.mp3
-.class
-.mp4
+# Java build output
+*.class
+/out/
+
+# Editor settings and scratch files
+/.vscode/
+tempCodeRunnerFile.java
+
+# Output from the file I/O examples
+/Revision/Revision.txt
+/Revision/Cricketer.ser
