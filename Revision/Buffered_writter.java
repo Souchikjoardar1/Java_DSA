@@ -3,7 +3,7 @@ import java.io.*;
 public class Buffered_writter {
     public static void main(String[] args) throws IOException {
         /*
-         * 1. File dir = new File("D:\\Java\\Revision");
+         * 1. File dir = new File("Revision");
          * Purpose: Creates a File object representing the directory Revision.
          * What it does:
          * It doesn't create the directory; it just creates a reference to it.
@@ -46,7 +46,7 @@ public class Buffered_writter {
          * A FileWriter is created to write data to the file in append mode.
          * A BufferedWriter is created to wrap the FileWriter for efficient writing.
          */
-        File dir = new File("D:\\Java\\Revision");
+        File dir = new File("Revision");
         File f = new File(dir, "Revision.txt");
         FileWriter fw = new FileWriter(f, true);
         BufferedWriter bw = new BufferedWriter(fw);

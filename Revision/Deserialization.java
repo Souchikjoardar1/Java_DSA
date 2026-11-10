@@ -4,8 +4,8 @@ public class Deserialization implements Serializable {
     public static void main(String[] args) {
         /*
          * 1. FileInputStream fis = new
-         * FileInputStream("D:\\Java\\Revision\\Revision.txt");
-         * Purpose: Opens a file named Revision.txt located at Revision for reading.
+         * FileInputStream("Revision/Cricketer.ser");
+         * Purpose: Opens a file named Cricketer.ser located at Revision for reading.
          * What it does: Reads the raw bytes from the file. This file is expected to
          * contain a serialized object (in this case, an object of the Cricketer class).
          * Why it's needed: To provide the raw data to the next step, which is
@@ -29,7 +29,7 @@ public class Deserialization implements Serializable {
          * FileInputStream and ObjectInputStream are automatically closed after the
          * block is executed, even if an exception occurs. This prevents resource leaks.
          * What Happens During Execution?
-         * The program opens the file Revision.txt and reads its contents.
+         * The program opens the file Cricketer.ser and reads its contents.
          * It uses ObjectInputStream to interpret the file's contents as a serialized
          * object.
          * The readObject() method reconstructs the Cricketer object from the file.
@@ -42,11 +42,11 @@ public class Deserialization implements Serializable {
          * serialized, you might get a InvalidClassException. To avoid this, the
          * Cricketer class should define a serialVersionUID field to ensure
          * compatibility between serialized and deserialized versions of the class.
-         * File Path: The file path Revision.txt must exist, and the file must contain a
+         * File Path: The file path Cricketer.ser must exist, and the file must contain a
          * serialized Cricketer object. Otherwise, an IOException or
          * ClassNotFoundException will occur.
          */
-        try (FileInputStream fis = new FileInputStream("D:\\Java\\Revision\\Revision.txt");
+        try (FileInputStream fis = new FileInputStream("Revision/Cricketer.ser");
                 ObjectInputStream ois = new ObjectInputStream(fis)) {
             Cricketer c = (Cricketer) ois.readObject();
             System.out.println(c);
@@ -74,7 +74,7 @@ public class Deserialization implements Serializable {
          * Re-Serialization:
          * 
          * After adding the serialVersionUID, you need to re-run the serialization code
-         * to create a new serialized file (Revision.txt) with the updated class.
+         * to create a new serialized file (Cricketer.ser) with the updated class.
          * Deserialization:
          * 
          * Once the file is updated, the deserialization code will work without the

@@ -2,7 +2,7 @@ import java.io.*;
 
 public class Read_write {
     public static void main(String[] args) throws IOException {
-        File dir = new File("D:\\Java\\Revision");
+        File dir = new File("Revision");
 
         File file = new File(dir, "Revision.txt");
         // if append is true for filewritter then the new data will not overwrite the

@@ -12,10 +12,6 @@ class Child extends Parent {
     Child() {
         System.out.println("the constructor of child class");
     }
-
-    static void display() {
-        System.out.println("the display method of child class");
-    }
 }
 
 public class Inherit {

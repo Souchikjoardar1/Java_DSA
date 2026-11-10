@@ -24,23 +24,23 @@ class Cricketer implements Serializable {
 public class Serialization {
     public static void main(String[] args) throws IOException {
         Cricketer c = new Cricketer("sachin", 56, 100);
-        FileOutputStream fos = new FileOutputStream("D:\\Java\\Revision\\Revision.txt");
+        FileOutputStream fos = new FileOutputStream("Revision/Cricketer.ser");
         ObjectOutputStream oos = new ObjectOutputStream(fos);
         oos.writeObject(c);
         oos.close();
         /*
          * An ObjectOutputStream is created, which allows Java objects to be written to
          * the file in a serialized format.
-         * A FileOutputStream is created to write data to a file named Revision.txt
+         * A FileOutputStream is created to write data to a file named Cricketer.ser
          * located in the Revision directory.
          * Writing the Object to the File:
          * 
          * oos.writeObject(c); The Cricketer object (c) is serialized and written to the
-         * file Revision.txt.
+         * file Cricketer.ser.
          * FileOutputStream
          * Purpose: It is used to write raw data (like bytes) to a file.
          * What it does in your code:
-         * This creates a connection to the file Revision.txt in the specified directory
+         * This creates a connection to the file Cricketer.ser in the specified directory
          * (Revision).
          * It prepares the file to receive data. If the file doesn’t exist, it will
          * create it.

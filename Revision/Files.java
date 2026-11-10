@@ -12,7 +12,7 @@ public class Files {
          * any directory show file names and count
          */
         int count = 0;
-        File f = new File("D:\\Java");
+        File f = new File(".");
         /*
          * the <File reference>.list() creates a String[]
          * array containing all file names
@@ -23,7 +23,7 @@ public class Files {
          * printing all the file names present inside
          * the String[] l which is a list of String type
          */
-        // the files present inside D://Java are:
+        // the files present inside the repository root are:
         for (String i : l) {
             count++;
             System.out.println(i);

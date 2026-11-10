@@ -2,7 +2,7 @@ import java.io.*;
 
 public class Buffered_reader {
     public static void main(String[] args) throws IOException {
-        File dir = new File("D:\\Java\\Revision");
+        File dir = new File("Revision");
         File f = new File(dir, "Revision.txt");
         FileReader fr = new FileReader(f);
         BufferedReader br = new BufferedReader(fr);

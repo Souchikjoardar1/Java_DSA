@@ -1,2 +1,0 @@
- x = length * breadth;
-    }

@@ -2,7 +2,7 @@ import java.io.*;
 
 public class Print_writer {
     public static void main(String[] args) throws IOException {
-        File dir = new File("D:\\Java\\Revision");
+        File dir = new File("Revision");
         File f = new File(dir, "Revision.txt");
         FileWriter fw = new FileWriter(f, true);
         PrintWriter pw = new PrintWriter(fw);
